@@ -1,0 +1,1 @@
+#This program introduces numerical data type "integer" and functions
