@@ -7,4 +7,11 @@ y = float(input("What's y?"))
 z = round(x+y)
 print(f"{z:,}")  #formatting numbers
 
+z= x/y
+print(z)
 
+z = round(x/y , 2)
+print(z)
+
+z = x/y
+print(f"{z:0.3f}")

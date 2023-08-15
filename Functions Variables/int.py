@@ -15,3 +15,6 @@ y = int(input("What's y again?"))
 print(x+y)
 
 print(int(input("What's x ?"))+int(input("What's y ?")))      #nesting of functions
+
+z = x/y
+print(z)
