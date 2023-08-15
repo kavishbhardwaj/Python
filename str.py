@@ -10,11 +10,11 @@ print("Hello, \"dear\" 'user' ", name, end = "")
 
 
 #Ask user for their name again
-print("Can you tell your name again ?", end ="039  ")
+print("Can you tell your full name again ?", end ="039  ")
 # https://docs.python.org/3/library/stdtypes.html#string-methods 
 # title function and strip function are methods here
 first_name, last_name = input().strip().title().split(" ")                     # strip away blank spaces and capitalise
-print(f"Hello, {name}", first_name, end = "\n")                                #F string makes it possible to enter varable inside quotes
+print(f"Hello, {name}", first_name, end = "\n")                                #F string makes it possible to enter variable inside quotes
 
 
 #Ask user for their friend's name
