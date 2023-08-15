@@ -27,4 +27,5 @@ https://docs.python.org/3/library/functions.html
 
 #in python both single and double quotes can be used provided end and start is by the same type
 
-#interactive python mode- not needed to save a .py file; type python in terminal window and three arrows appear; any line of code is interpreted immediately
+#interactive python mode- not needed to save a .py file; type python in terminal window and three arrows appear; any line of code is interpreted immediately;
+#use exit() or ctrl+z+enter to exit
