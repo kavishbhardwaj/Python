@@ -10,7 +10,7 @@ def main():
 
 
 def is_even(n):
-    return True if n % 2 == 0 else Flase      #Pythonic way
+    return True if n % 2 == 0 else False      #Pythonic way
     # return n % 2 == 0                       #Alternate way to perfrom same function
 
 main()
