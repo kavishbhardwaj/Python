@@ -18,3 +18,7 @@ print(int(input("What's x ?"))+int(input("What's y ?")))      #nesting of functi
 
 z = x/y
 print(z)
+
+
+z= x//y   #floor division
+print("floor division",z)
