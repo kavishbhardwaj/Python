@@ -6,7 +6,7 @@ print("What's your name ? ")
 name = input()              #result of input function is assigned to variable "name"    
 #print(*objects, sep=' ', end='\n', file=None, flush=False)   
 # #end of the line will be nothing whereas in original syntax its \n                           
-print("Hello, \"dear\" 'user' ", name, end = "")  
+print("Hello, \"dear\" 'user' ", name, end = "")       #quotation mark inside a string 
 
 
 #Ask user for their name again
