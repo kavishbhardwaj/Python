@@ -1,4 +1,4 @@
-#Finding whether a number is even or odd without modulo operator
+#Finding whether a number is even or odd 
 #The modulo % operator in programming allows one to see if two numbers divide evenly or divide and have a remainder.
 
 def main():
@@ -10,7 +10,7 @@ def main():
 
 
 def is_even(n):
-    return True if n % 2 == 0 else False      #Pythonic way
+    return True if n % 2 == 0 else False      #Pythonic way; % means modulo
     # return n % 2 == 0                       #Alternate way to perfrom same function
 
 main()
