@@ -21,11 +21,26 @@ print(f"Hello, {name}", first_name, end = "\n")                                #
 friend_name = input("What's your best friend's name ?").strip().title()
 print("Say Hello to " + friend_name)
 
+
+valid = name.isalpha()
+print(valid)
+'''name.isalpha() returns a boolean value. 
+If every character in the string is an alphabet and 
+the string is non-empty, it returns True, and False otherwise
+
+https://docs.python.org/3/library/stdtypes.html#string-methods
+'''
+
 """
 https://docs.python.org/3/library/functions.html
 """
 
 #in python both single and double quotes can be used provided end and start is by the same type
 
-#interactive python mode- not needed to save a .py file; type python in terminal window and three arrows appear; any line of code is interpreted immediately;
-#use exit() or ctrl+z+enter to exit
+
+#how to write in multiple lines without writing hash before every line
+'''interactive python mode- not needed to save a .py file; 
+type python in terminal window and three arrows appear; 
+any line of code is interpreted immediately;
+use exit() or ctrl+z+enter to exit'''
+

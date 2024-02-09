@@ -1,0 +1,15 @@
+import calendar 
+print(calendar.prmonth(3000, 8))
+print(calendar.weekday(3000, 8, 15))
+
+import time
+print(time.ctime())
+
+import calendar as c
+print(c.calendar(2024))
+
+from calendar import *
+print(month(2024, 3))
+
+
+#sleep(x) is a function in time that suspends the execution of the program for x seconds
