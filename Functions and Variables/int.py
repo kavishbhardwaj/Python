@@ -25,7 +25,7 @@ print("No, the correct sum of inetegers is", z)
 '''
 #round() accepts a number as input and returns integer closest to it
 #abs() accepts a number as input and returns its absolute value
-int() - If an integer enclosed within quotes (string) is entered as input, then the output is that integer. int('123') is 123. 
+int() - If an integer enclosed within quotes is entered as input, then the output is that integer. int('123') is 123. 
 If a float is entered as input, then the decimal part is thrown away and the integer part is returned. int(1.2) returns 1
 If a float is passed in the form of a string, a ValueError will be thrown- int('2.5')
 isinstance() is used to check if an object is of a specified type. 
