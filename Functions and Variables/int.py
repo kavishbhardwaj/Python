@@ -48,8 +48,6 @@ print("Division", z)
 z = x % y #Modulo
 print("Remainder", z)
 
-z= x//y   #floor division
-print("floor division", z)
-
-z = x**y
-print("Exponentiation",z)
+z1 = x//y   #floor division
+z2 = x**y
+print('floor division {}; exponentiation {}'.format(z1, z2))

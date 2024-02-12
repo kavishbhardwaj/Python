@@ -10,6 +10,9 @@ print(f"{z:,}")  #formatting numbers
 z= x/y
 print(z)
 
+z = f'{z:10.1f}'
+print(z)
+
 z = round(x/y , 2)
 print(z)
 
