@@ -1,0 +1,86 @@
+Let's Retry the Same Process
+Set the proxy variables again:
+
+bash
+Copy code
+set HTTP_PROXY=http://kavish:Shivam!4!@10.31.31.10:8128
+set HTTPS_PROXY=http://kavish:Shivam!4!@10.31.31.10:8128
+Then, try running the environment creation command again:
+
+bash
+Copy code
+conda create --name simulations_env python
+
+
+
+Step : Activate the Conda Environment
+
+bash
+Copy code
+conda activate simulations_env
+
+
+Step 5: Install Essential Python Packages
+Since this environment is meant for advanced Python projects, let's install some essential packages for your work in simulations, physics, and 3D visualizations. Run the following command to install them:
+
+bash
+Copy code
+conda install numpy scipy matplotlib pandas jupyterlab
+This installs:
+
+Numpy: for numerical computations
+Scipy: for scientific computing
+Matplotlib: for plotting and visualizations
+Pandas: for data manipulation and analysis
+JupyterLab: to provide a flexible environment for code notebooks
+Step 6: Install Additional Visualization Libraries
+You may also want to install these packages, depending on the visualizations you need:
+
+bash
+Copy code
+conda install mayavi vtk
+Mayavi: for advanced 3D scientific data visualization
+VTK: the Visualization Toolkit for 3D computer graphics, image processing, and visualization
+Step 7: Verify Installation
+Once everything is installed, check that it works properly by launching JupyterLab:
+
+bash
+Copy code
+jupyter-lab
+This should open a browser window with JupyterLab, where you can start coding with Python.
+
+
+If there's a conflict between the Python version and the Mayavi package it's because Mayavi requires a specific version of Python (3.6 or 3.7), but the environment you're working in has a more recent Python version (probably 3.12).
+
+Here are a couple of ways to resolve this:
+
+Option 1: Install Mayavi in a Separate Environment with Python 3.7
+If Mayavi is critical to your project, you can create a separate Conda environment with Python 3.7 specifically for running Mayavi. Here's how:
+
+Create a new environment with Python 3.7:
+
+bash
+Copy code
+conda create --name mayavi_env python=3.7
+Activate the new environment:
+
+bash
+Copy code
+conda activate mayavi_env
+Install Mayavi in that environment:
+
+bash
+Copy code
+conda install mayavi vtk
+This way, you can use this environment when you need Mayavi while keeping your simulations_env updated with Python 3.12 for other advanced tasks.
+
+Option 2: Use an Alternative 3D Visualization Library
+If you don’t specifically need Mayavi, you can use alternative libraries that are compatible with newer Python versions, such as:
+
+Plotly: A powerful 3D visualization tool with support for interactive plots.
+PyVista: A friendly interface for the Visualization Toolkit (VTK), useful for 3D visualizations.
+To install these in your current environment:
+
+bash
+Copy code
+conda install plotly pyvista
