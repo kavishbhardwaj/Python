@@ -1,10 +1,25 @@
 #This program introduces to string data type and functions
 
+print("Hello, world", 'Hello audience', "Hello Gods", 10, 20.5)  
+
+# Both single and double quotes are okay
+
+print("*****")
+print("****")
+print("***")
+print("**")
+print("*")
+
+###
+
+print("What's your name ?")
+name = str(input())
+print("Hello", name)
+
 #Ask user for their name
 #print is a function and its arguements/parameters are inside the brackets
 print("What's your name ? ")                                                               
-name = input()              #result of input function is assigned to variable "name"  
-name = f' Respected {name}'  
+name = input()              #result of input function is assigned to variable "name"    
 #print(*objects, sep=' ', end='\n', file=None, flush=False)   
 # #end of the line will be nothing whereas in original syntax its \n                           
 print("Hello, \"dear\" 'user' ", name, end = "")       #quotation mark inside a string 
@@ -22,36 +37,11 @@ print(f"Hello, {name}", first_name, end = "\n")                                #
 friend_name = input("What's your best friend's name ?").strip().title()
 print("Say Hello to " + friend_name)
 
-
-valid = name.isalpha()
-print(valid)
-'''name.isalpha() returns a boolean value. 
-If every character in the string is an alphabet and 
-the string is non-empty, it returns True, and False otherwise
-
-https://docs.python.org/3/library/stdtypes.html#string-methods
-'''
-
 """
 https://docs.python.org/3/library/functions.html
 """
 
 #in python both single and double quotes can be used provided end and start is by the same type
 
-
-#how to write in multiple lines without writing hash before every line
-'''interactive python mode- not needed to save a .py file; 
-type python in terminal window and three arrows appear; 
-any line of code is interpreted immediately;
-use exit() or ctrl+z+enter to exit'''
-
-#The Python string translate() method replaces each character in the string 
-#using the given mapping table or dictionary.
-
-s = 'abc12321cba'
-print(s.translate({ord('b'): None}))
-
-s1 = input("Enter a string s1: ")
-s2 = input("Enter another string s2: ")
-print(s1.translate({ord(i): None for i in s2}))
-
+#interactive python mode- not needed to save a .py file; type python in terminal window and three arrows appear; any line of code is interpreted immediately;
+#use exit() or ctrl+z+enter to exit

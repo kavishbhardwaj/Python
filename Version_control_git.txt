@@ -1,0 +1,122 @@
+PS C:\Users\PLEXTEK> git --version
+git version 2.46.1.windows.1
+
+
+PS C:\Users\PLEXTEK> cd C:\Users\PLEXTEK\Documents\Programming
+
+PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
+Cloning into 'cs50Python'...
+fatal: unable to access 'https://github.com/kavishbhardwaj/cs50Python.git/': OpenSSL/3.2.3: error:0A0000C6:SSL routines::packet length too long
+
+
+PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
+Cloning into 'cs50Python'...
+fatal: unable to access 'https://github.com/kavishbhardwaj/cs50Python.git/': OpenSSL/3.2.3: error:0A0000C6:SSL routines::packet length too long
+
+1. Check Proxy Settings
+Since you're using a proxy, make sure your Git configuration is aware of it. Run the following commands to set up your proxy for Git:
+
+PS C:\Users\PLEXTEK\Documents\Programming> git config --global http.proxy http://kavish:Shivam%214%21@10.31.31.10:8128
+>> git config --global https.proxy https://kavish:Shivam%214%21@10.31.31.10:8128
+
+2. Disable SSL Verification
+If the SSL issue persists, you can temporarily disable SSL verification for Git by running this command:
+PS C:\Users\PLEXTEK\Documents\Programming> git config --global http.sslVerify false
+
+PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
+Cloning into 'cs50Python'...
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+warning: auto-detection of host provider took too long (>2000ms)
+warning: see https://aka.ms/gcm/autodetect for more information.
+remote: Enumerating objects: 157, done.
+remote: Counting objects: 100% (157/157), done.
+remote: Compressing objects: 100% (124/124), done.
+remote: Total 157 (delta 40), reused 102 (delta 19), pack-reused 0 (from 0)
+Receiving objects: 100% (157/157), 52.24 KiB | 3.73 MiB/s, done.
+Resolving deltas: 100% (40/40), done.
+
+3. Navigate to your cloned repository:
+In the terminal (inside VS Code or Command Prompt), navigate to your cloned repository directory:
+
+PS C:\Users\PLEXTEK\Documents\Programming> cd C:\Users\PLEXTEK\Documents\Programming\cs50Python
+
+4. Check Git status:
+To see the current status of your changes, use:
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "Here\342\200\231s a more comprehensive guide t.txt"
+        Install mayavi.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+5. Stage the changes:
+To stage all the modified files for commit, use:
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git add . 
+
+6. If you want to stage a specific file, you can do: git add <filename>
+
+7.Commit the changes:
+After staging your changes, you need to commit them. Add a message describing the changes you've made:
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git commit -m "Your commit message here"
+[main f816d2a] Your commit message here
+ 2 files changed, 247 insertions(+)
+ create mode 100644 "Here\342\200\231s a more comprehensive guide t.txt"
+ create mode 100644 Install mayavi.txt
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git push origin main
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+info: please complete authentication in your browser...
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+warning: auto-detection of host provider took too long (>2000ms)
+warning: see https://aka.ms/gcm/autodetect for more information.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 3.59 KiB | 3.59 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/kavishbhardwaj/cs50Python.git
+   6374e63..f816d2a  main -> main
+
+8. Push the changes to GitHub:
+Now, push your committed changes to the remote repository:
+
+git push origin main
+
+Replace main with the correct branch name if your repository uses a different branch (e.g., master).
+
+9. Enter credentials (if prompted):
+If prompted, enter your GitHub username and password (or a Personal Access Token if GitHub requires it for authentication).
+Additional Notes:
+If this is your first time pushing, and you need to set the upstream branch, use this command instead:
+
+git push -u origin main
+Now your changes will be reflected in the GitHub repository! Let me know if you run into any issues during the process.
+
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git push origin main
+warning: ----------------- SECURITY WARNING ----------------
+warning: | TLS certificate verification has been disabled! |
+warning: ---------------------------------------------------
+warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
+warning: auto-detection of host provider took too long (>2000ms)
+warning: see https://aka.ms/gcm/autodetect for more information.
+Everything up-to-date
+
+PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> 
