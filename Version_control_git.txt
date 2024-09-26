@@ -1,19 +1,10 @@
 PS C:\Users\PLEXTEK> git --version
 git version 2.46.1.windows.1
 
-
+Make sure your terminal in VS Code is in the correct project folder. If not, you can change the directory using:
 PS C:\Users\PLEXTEK> cd C:\Users\PLEXTEK\Documents\Programming
 
-PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
-Cloning into 'cs50Python'...
-fatal: unable to access 'https://github.com/kavishbhardwaj/cs50Python.git/': OpenSSL/3.2.3: error:0A0000C6:SSL routines::packet length too long
-
-
-PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
-Cloning into 'cs50Python'...
-fatal: unable to access 'https://github.com/kavishbhardwaj/cs50Python.git/': OpenSSL/3.2.3: error:0A0000C6:SSL routines::packet length too long
-
-1. Check Proxy Settings
+1. Check Proxy Settings if you encounter errors like - fatal: unable to access 'https://github.com/kavishbhardwaj/cs50Python.git/': OpenSSL/3.2.3: error:0A0000C6:SSL routines::packet length too long
 Since you're using a proxy, make sure your Git configuration is aware of it. Run the following commands to set up your proxy for Git:
 
 PS C:\Users\PLEXTEK\Documents\Programming> git config --global http.proxy http://kavish:Shivam%214%21@10.31.31.10:8128
@@ -23,20 +14,41 @@ PS C:\Users\PLEXTEK\Documents\Programming> git config --global http.proxy http:/
 If the SSL issue persists, you can temporarily disable SSL verification for Git by running this command:
 PS C:\Users\PLEXTEK\Documents\Programming> git config --global http.sslVerify false
 
+Initialize Git (if not already done)
+If you haven’t initialized Git in this project before, you need to run:
+git init
+This creates a .git folder in your project directory, turning it into a Git repository.
+
+git clone / git remote add origin
+
+Add Your Remote Repository: Since your remote repository is on GitHub, you need to link your local Git repository to the remote GitHub repository. Run this command to add the remote repository:
+
+git remote add origin https://github.com/kavishbhardwaj/cs50Python.git
+You only need to do this once. If you’ve already added the remote, you can skip this step. You can check if the remote is added with
+
+git remote -v
+
+What happens when you run git remote add origin:
+
+It does not copy any files or history from the remote repository.
+It simply associates your local repository with a remote repository under the alias origin.
+After adding the remote, you can push, pull, or fetch from the remote repository.
+When to use git remote add origin:
+
+When you already have a local repository and now want to push it to a remote server (e.g., GitHub).
+Example: You created a project on your machine and now want to upload it to GitHub.
+
 PS C:\Users\PLEXTEK\Documents\Programming> git clone https://github.com/kavishbhardwaj/cs50Python.git
-Cloning into 'cs50Python'...
-warning: ----------------- SECURITY WARNING ----------------
-warning: | TLS certificate verification has been disabled! |
-warning: ---------------------------------------------------
-warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
-warning: auto-detection of host provider took too long (>2000ms)
-warning: see https://aka.ms/gcm/autodetect for more information.
-remote: Enumerating objects: 157, done.
-remote: Counting objects: 100% (157/157), done.
-remote: Compressing objects: 100% (124/124), done.
-remote: Total 157 (delta 40), reused 102 (delta 19), pack-reused 0 (from 0)
-Receiving objects: 100% (157/157), 52.24 KiB | 3.73 MiB/s, done.
-Resolving deltas: 100% (40/40), done.
+
+What happens when you run git clone:
+A new directory named cs50Python will be created locally.
+The repository’s contents (all files and folders) are copied into this directory.
+It automatically sets the remote URL as origin (pointing to https://github.com/kavishbhardwaj/cs50Python.git).
+
+When to use git clone:
+When you are starting from scratch on a project and you want a local copy of a repository that already exists on a remote server.
+
+
 
 3. Navigate to your cloned repository:
 In the terminal (inside VS Code or Command Prompt), navigate to your cloned repository directory:
@@ -44,17 +56,8 @@ In the terminal (inside VS Code or Command Prompt), navigate to your cloned repo
 PS C:\Users\PLEXTEK\Documents\Programming> cd C:\Users\PLEXTEK\Documents\Programming\cs50Python
 
 4. Check Git status:
-To see the current status of your changes, use:
+Before adding your changes, it's good practice to check which files have been modified or are untracked. To see the current status of your changes, use:
 PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git status
-On branch main
-Your branch is up to date with 'origin/main'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        "Here\342\200\231s a more comprehensive guide t.txt"
-        Install mayavi.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
 
 5. Stage the changes:
 To stage all the modified files for commit, use:
@@ -65,35 +68,6 @@ PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git add .
 7.Commit the changes:
 After staging your changes, you need to commit them. Add a message describing the changes you've made:
 PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git commit -m "Your commit message here"
-[main f816d2a] Your commit message here
- 2 files changed, 247 insertions(+)
- create mode 100644 "Here\342\200\231s a more comprehensive guide t.txt"
- create mode 100644 Install mayavi.txt
-PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git push origin main
-warning: ----------------- SECURITY WARNING ----------------
-warning: | TLS certificate verification has been disabled! |
-warning: ---------------------------------------------------
-warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
-info: please complete authentication in your browser...
-warning: ----------------- SECURITY WARNING ----------------
-warning: | TLS certificate verification has been disabled! |
-warning: ---------------------------------------------------
-warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
-warning: ----------------- SECURITY WARNING ----------------
-warning: | TLS certificate verification has been disabled! |
-warning: ---------------------------------------------------
-warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
-warning: auto-detection of host provider took too long (>2000ms)
-warning: see https://aka.ms/gcm/autodetect for more information.
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 20 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 3.59 KiB | 3.59 MiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/kavishbhardwaj/cs50Python.git
-   6374e63..f816d2a  main -> main
 
 8. Push the changes to GitHub:
 Now, push your committed changes to the remote repository:
@@ -104,19 +78,110 @@ Replace main with the correct branch name if your repository uses a different br
 
 9. Enter credentials (if prompted):
 If prompted, enter your GitHub username and password (or a Personal Access Token if GitHub requires it for authentication).
+
 Additional Notes:
 If this is your first time pushing, and you need to set the upstream branch, use this command instead:
-
 git push -u origin main
-Now your changes will be reflected in the GitHub repository! Let me know if you run into any issues during the process.
 
-PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> git push origin main
-warning: ----------------- SECURITY WARNING ----------------
-warning: | TLS certificate verification has been disabled! |
-warning: ---------------------------------------------------
-warning: HTTPS connections may not be secure. See https://aka.ms/gcm/tlsverify for more information.
-warning: auto-detection of host provider took too long (>2000ms)
-warning: see https://aka.ms/gcm/autodetect for more information.
-Everything up-to-date
 
-PS C:\Users\PLEXTEK\Documents\Programming\cs50Python> 
+
+
+
+
+If you are working on two different local machines and want to keep everything in sync with the remote repository, GitHub makes this process straightforward. Here’s a step-by-step guide on how to keep your changes synced across multiple local machines using GitHub as the remote repository.
+
+### General Workflow for Syncing Across Machines
+
+#### 1. **Set Up the Project on Both Machines**
+
+If you haven’t already, clone the repository to both machines so they are connected to the same remote repository on GitHub.
+
+On **Machine 1** and **Machine 2**, run:
+
+```bash
+git clone https://github.com/kavishbhardwaj/cs50Python.git
+```
+
+This will download the project from GitHub onto both machines and set up `origin` as the remote repository.
+
+#### 2. **Always Pull the Latest Changes Before Working**
+
+Whenever you switch to a machine to start working on the project, you should always **pull** the latest changes from the remote repository to make sure your local copy is up to date.
+
+On either **Machine 1** or **Machine 2**, run:
+
+```bash
+git pull origin main
+```
+
+This command will:
+- **Fetch** the latest changes from the remote repository on GitHub.
+- **Merge** those changes into your local working copy.
+
+💡 **Tip**: Always pull before you start working on new changes, especially when switching between machines.
+
+#### 3. **Make Changes and Commit Locally**
+
+After pulling the latest changes, you can make your modifications locally. Once you’ve made changes, you need to add and commit them:
+
+```bash
+git add .
+git commit -m "Describe the changes you made"
+```
+
+This stages the files (`git add .`) and commits them locally (`git commit -m`).
+
+#### 4. **Push the Changes to GitHub**
+
+Once you’ve committed the changes on one machine, you need to **push** them to the remote repository so that the other machine can fetch the updates.
+
+```bash
+git push origin main
+```
+
+This sends the changes from your local machine to the remote GitHub repository.
+
+#### 5. **On the Other Machine: Pull the Changes Before Working**
+
+When you switch to the other machine, you need to **pull** the changes that were made on the first machine. This ensures that both machines stay in sync.
+
+On **Machine 2**, run:
+
+```bash
+git pull origin main
+```
+
+This will bring all the changes made on **Machine 1** into **Machine 2**.
+
+#### 6. **Repeat the Process**
+
+For every session:
+1. **Pull** before you start working to ensure you have the latest updates.
+2. **Commit** and **Push** changes when you're done working on one machine.
+3. When switching machines, **pull** the changes from GitHub before starting work again.
+
+### Dealing with Potential Merge Conflicts
+
+Occasionally, you might run into **merge conflicts** if you made changes to the same file on both machines without pulling first. Git will notify you about the conflict, and you’ll have to resolve it manually.
+
+Steps to resolve conflicts:
+1. Git will show you the conflicting sections of the file.
+2. Edit the file to resolve the conflict.
+3. After resolving conflicts, stage the file again:
+   ```bash
+   git add <filename>
+   ```
+4. Commit the merge:
+   ```bash
+   git commit -m "Resolve merge conflict"
+   ```
+
+Once the conflict is resolved, you can push the changes.
+
+
+
+By following this process, you ensure that both machines are always up to date with the latest changes from the remote repository.
+
+Let me know if you need any further clarification or help with the process!
+
+ 
