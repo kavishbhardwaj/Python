@@ -1,0 +1,13 @@
+
+############################################Summary:###############################################################################
+
+Once your remote repository (origin) is already set up
+git pull origin main			  #Pull changes before starting work
+git status                                # Check the status of your local changes
+git add .                                 # Add and commit changes locally
+git commit -m "Your descriptive message"  # Commit changes locally
+git push origin main                      # Push changes to the remote repository to 'main' branch (or 'master' if it's the default)
+
+
+
+
