@@ -29,5 +29,5 @@ print('y' in globals())
 '''
 nothing prevents us from using the name of a built-in function, such as print, as the name of a variable. 
 But this is a very bad practice that should be avoided at any cost because
-if in-bulit function print can't be used in this situation
+the in-bulit function print can't be used in this situation
 '''
