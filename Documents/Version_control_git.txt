@@ -164,6 +164,30 @@ For every session:
 
 Occasionally, you might run into **merge conflicts** if you made changes to the same file on both machines without pulling first. Git will notify you about the conflict, and you’ll have to resolve it manually.
 
+Stashing in Git is a way to temporarily set aside your local changes that are not ready to be committed, allowing you to work on something else, like pulling new changes or merging a branch. When you use git stash, it does not push your changes to the online repository; it just saves your current working directory's modifications in a "stash stack" locally and restores the working directory to a clean state. What happens when you git stash: All modified and staged changes in your working directory are saved to a stash. Your working directory becomes clean, as if you didn’t make any changes at all. The changes are not committed or pushed to the remote repository. They remain stored locally in your stash list until you apply or pop them.
+
+Workflow:
+Stash your changes: If you have uncommitted changes but want to pull or merge code from the remote repository, you can stash them:
+
+git stash
+
+This will remove the changes from your working directory and store them safely in the stash.
+
+Pull or merge: After stashing, you can pull the latest code from the online repository or merge a branch:
+
+git pull origin <branch>
+or
+
+git merge <branch>
+Now, your local repository will be updated with the changes from the online repository or the other branch.
+
+Apply your stashed changes: Once the pull or merge is complete, you can bring your stashed changes back:
+
+git stash pop
+This will apply the stashed changes back to your working directory and remove the changes from the stash list. If there are any conflicts between your stashed changes and the newly pulled code, Git will prompt you to resolve them.
+
+
+
 Steps to resolve conflicts:
 1. Git will show you the conflicting sections of the file.
 2. Edit the file to resolve the conflict.
@@ -182,6 +206,7 @@ Once the conflict is resolved, you can push the changes.
 
 By following this process, you ensure that both machines are always up to date with the latest changes from the remote repository.
 
-Let me know if you need any further clarification or help with the process!
+
+
 
  
