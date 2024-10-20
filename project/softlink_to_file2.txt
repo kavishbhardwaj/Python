@@ -1,0 +1,1 @@
+project/directory1/file2.txt

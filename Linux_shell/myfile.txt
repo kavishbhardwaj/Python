@@ -1,0 +1,18 @@
+This is the second line with the word "NEW".
+Inserting a line before the first line.This line contains the word "oldest".This is the first line of the file.
+This LINE has the number 123 in it.
+This line contains the word "oldest".
+This is the first line of the file.
+This is the second line with the word "new".
+This is the third line.
+This line has the number 123 in it.
+This line contains the word "oldest".
+This is the first line of the file.
+This is the second line with the word "new".
+This is the third line.
+This line has the number 123 in it.
+This line contains the word "oldest".
+This is a new line appended.
+And here’s another one.
+Sun Oct 20 12:55:48 IST 2024
+This line will be added to the end.
