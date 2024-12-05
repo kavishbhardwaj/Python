@@ -1,6 +1,0 @@
-This is the second line with the word "new".
-Inserting a line before the first line.This is the first line of the file.
-This LINE contains the word "oldest".
-This is the third line.
-Sat Oct 19 17:17:11 UTC 2024
-This line will be added to the end.
