@@ -1,0 +1,33 @@
+name: Repository history maintenance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/history-maintenance.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rewrite-messages:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Normalize repository history metadata
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --msg-filter '
+          case "$GIT_COMMIT" in
+            2c0f87430f0a51e5deb8fcd94b2d2772fb4e192a) echo "Refine repository contents" ;;
+            ff52486a9755268226a0f61fed6c38347a95c6c2) echo "Add repository overview" ;;
+            0fb3482079496e72569fc261d40396b4f8460653) echo "Curate Python practice materials" ;;
+            *) cat ;;
+          esac
+          ' -- HEAD
+          git push origin +HEAD:main
